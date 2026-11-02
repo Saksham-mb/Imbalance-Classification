@@ -1,0 +1,38 @@
+{
+    "Scaled Class Weights": {
+        "PR_AUC": 0.8778,
+        "Recall": 0.8469,
+        "Precision": 0.8737,
+        "False_Positives": 12,
+        "False_Negatives": 15,
+        "True_Positives": 83,
+        "True_Negatives": 56852
+    },
+    "SMOTE Oversampling": {
+        "PR_AUC": 0.8717,
+        "Recall": 0.8673,
+        "Precision": 0.7391,
+        "False_Positives": 30,
+        "False_Negatives": 13,
+        "True_Positives": 85,
+        "True_Negatives": 56834
+    },
+    "Random Undersampling": {
+        "PR_AUC": 0.7741,
+        "Recall": 0.8776,
+        "Precision": 0.43,
+        "False_Positives": 114,
+        "False_Negatives": 12,
+        "True_Positives": 86,
+        "True_Negatives": 56750
+    },
+    "Triple Hybrid": {
+        "PR_AUC": 0.8422,
+        "Recall": 0.8776,
+        "Precision": 0.4115,
+        "False_Positives": 123,
+        "False_Negatives": 12,
+        "True_Positives": 86,
+        "True_Negatives": 56741
+    }
+}

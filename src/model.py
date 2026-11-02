@@ -5,26 +5,8 @@ from imblearn.under_sampling import RandomUnderSampler
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 from xgboost import XGBClassifier
 
-TUNED_XGB_PARAMS = {
-    "subsample": 0.7,
-    "reg_lambda": 1.0,
-    "reg_alpha": 1.0,
-    "n_estimators": 600,
-    "min_child_weight": 3,
-    "max_depth": 5,
-    "max_delta_step": 10,
-    "learning_rate": 0.03,
-    "grow_policy": "lossguide",
-    "gamma": 0.5,
-    "colsample_bytree": 0.6,
-    "random_state": 42,
-    "n_jobs": -1,
-}
-
-
 class Models:
     def __init__(self):
-        self.cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
         self.params = {
         "subsample": 0.7,
         "reg_lambda": 1.0,
@@ -41,7 +23,7 @@ class Models:
         "n_jobs": -1,
     }
     def build_and_evaluate(self, pipeline, X, y):
-        scores = cross_val_score(pipeline, X, y, cv=self.cv, scoring="average_precision", n_jobs=-1)
+        scores = cross_val_score(pipeline, X, y, cv=5, scoring="average_precision", n_jobs=-1)
         cv_pr_auc = scores.mean()
 
         pipeline.fit(X, y)
