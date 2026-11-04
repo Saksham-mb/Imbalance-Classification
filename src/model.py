@@ -23,7 +23,7 @@ class Models:
         "n_jobs": -1,
     }
     def build_and_evaluate(self, pipeline, X, y):
-        scores = cross_val_score(pipeline, X, y, cv=5, scoring="average_precision", n_jobs=-1)
+        scores = cross_val_score(pipeline, X, y, cv=StratifiedKFold(n_splits=5, shuffle=True, random_state=42), scoring="average_precision", n_jobs=1)
         cv_pr_auc = scores.mean()
 
         pipeline.fit(X, y)
@@ -54,6 +54,6 @@ class Models:
         pipeline = Pipeline(steps=[
                 ("smote", SMOTE(random_state=42, sampling_strategy=0.10)),
                 ("undersampler",RandomUnderSampler(random_state=42, sampling_strategy=0.25)),
-                ("model", XGBClassifier(scale_pos_weight=4, **self.params))
+                ("model", XGBClassifier(scale_pos_weight=2, **self.params))
             ])
         return self.build_and_evaluate(pipeline, X, y)

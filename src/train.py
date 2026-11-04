@@ -2,7 +2,6 @@ from model import Models
 from data import DataExtractor
 import joblib
 from pathlib import Path
-from sklearn.metrics import average_precision_score
 
 PROJECT_ROOT=Path(__file__).resolve().parent.parent
 MODEL_DIR=PROJECT_ROOT / 'models'

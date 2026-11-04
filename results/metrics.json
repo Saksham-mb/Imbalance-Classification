@@ -27,12 +27,12 @@
         "True_Negatives": 56750
     },
     "Triple Hybrid": {
-        "PR_AUC": 0.8422,
+        "PR_AUC": 0.8505,
         "Recall": 0.8776,
-        "Precision": 0.4115,
-        "False_Positives": 123,
+        "Precision": 0.4751,
+        "False_Positives": 95,
         "False_Negatives": 12,
         "True_Positives": 86,
-        "True_Negatives": 56741
+        "True_Negatives": 56769
     }
 }
